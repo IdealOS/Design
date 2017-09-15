@@ -143,3 +143,90 @@ every file that was changed and when.
 
 * events decouple applications, making them easy to do new things with. hack it. remix it.
 
+
+===== v2
+
+* this is a mockup
+* we have email, contacts, music player, text editor. all the things you'd expect.
+* all windows are tabbed. mix and match. dock to the sides or bottom.
+
+* everything is tied together with a central message bus
+* click button to toggle play pause
+* can also press command key
+* be in another app and press command key
+* see global keybindings. apps don't have shortcuts, the OS does. 
+* change toggle play keybinding
+* see global keybindings for save, new, close, etc.
+
+* events can come from anywhere, even outside the system. 
+* here is a button on my phone which sends the same play event.
+* the music player app doesn't care where the event comes from
+
+* message bus means everything is decoupled automatically. 
+* email app is actually three parts, backend service, viewer, composer
+* i can switch the composer to a different one if i want. switch to more code like editor instead of WYSIWYG
+
+
+* even copy and paste is just events. pressing copy sends a copy event. the clipboard service listens
+to it. very powerful.
+* open clipboard viewer.
+* clipboard viewer shows not just what is currently in the clibboard, but what you copied before that, and before that.
+* show your entire history is available. you can save anything by just copying it from any app.  
+* you can click star on favorite ones and filter to just show only those. 
+* you can select multiple items and then paste them all together. 
+* press command N to create a new text doc
+* paste multiple items into new wordprocessor doc
+
+
+
+* you'll notice I haven't talked about files yet. no file system. a live realtime database for all files
+* the music player is really just a few queries into the database, plus a service that knows how to play mp3 files
+* whenever something changes in the database, any app using a query is automatically notified
+* view email with mp3 attachment.  
+* click 'save' button. mp3 player automatically updates the list
+
+* another example, email and chat and contacts all share the same list of people in the database.
+* if I change someone's avatar in one the rest are automatically updated
+* find myself, change my avatar, see the rest update
+
+
+
+
+* i can also select text and press control space or right click to see what options are available.
+* in addition to copy and paste I have global extensions to do other things like translate into another language or speak the text or send to the clipboard on my phone.
+* each of these is a service in the database
+
+* we also have a person bar. it is a subset of people from my contacts that are most relevant to me
+* it shows when they are online and lets me start a video chat or send them files.
+* for example, i can right click a song in the music player and send it to my wife.
+* there is also a selection extension for text which lets me send text or urls directly to one of my friends.
+* again, this is all powered by the same database and a few small scripts.
+
+
+* finally, ideal os has workspaces.
+* currently we are in my 'home' workspace which contains my personal information and documents
+* switch to 'office' workspace
+* all of the apps are the same, but their queries now return different sets of data
+* here is my person bar. before it had my wife and a few friends
+* now the person bar contains my co-workers
+* whenever I create a new document it will be included in this workspace and not the others
+* the system is smart enough to manage the different parts of my life. I'm a 21st century knowledge worker.
+* i need the system to work the way i do.
+
+* this is ideal os. 
+* everything in the OS is built on top of the realtime database instead of a traditional filesystem
+* everything in the OS communicates with the message bus
+* these two technologies support the guiding principle in IdealOS, that your computer should work the way you want it to
+* IdealOS is currently a mockup but it could exist one day.
+* please visit xyz.io to join our community and help make it real
+
+
+
+
+
+
+
+
+
+
+
